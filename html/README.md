@@ -94,7 +94,6 @@ load(paste0(my_wpath,"aims_pam50_annotations.Rdata"))
 
 targets <- readxl::read_xlsx(paste0(my_wpath,"BMC_BCR_Additional_File1_13SEP2023.xlsx"),
                              sheet=3, skip=1, trim_ws=T)
-## The below has to be added to the table manually, and removed from the code
 targets$EntrezID <- as.character(gtf$EntrezID[match(targets$`Gencode.v35 (c)`, gtf$gene_id)])
 targets$EntrezID[targets$`Ensembl_ID (b)`=="ENSG00000253167"] <- "106479020"
 targets$EntrezID[targets$`Ensembl_ID (b)`=="ENSG00000270141"] <- "7012"
